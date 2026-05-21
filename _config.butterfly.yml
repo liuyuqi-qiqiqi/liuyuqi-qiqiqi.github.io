@@ -1,0 +1,60 @@
+nav:
+  logo: /images/myphoto.jpg
+  display_title: true  # 关闭标题文字，只显示图片Logo
+  fixed: false
+
+menu:
+  首页: / || fas fa-home
+  时间轴: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  搜索: /search/ || fas fa-search
+
+# 头像设置
+avatar:
+  img: /images/myphoto.jpg
+
+# 顶部图设置
+index_img: /images/longlong-photo.jpg
+default_top_img: /images/longlong-photo.jpg
+index_top_img_height: 400px # 顶部图高度，可自己调整，比如改成350px/450px
+
+runtimeshow:
+  enable: true
+  publish_date: 20/5/2026 00:00:00
+
+custom_css: /css/custom.css
+
+# 本地搜索功能
+search: true
+local_search:
+  enable: true
+  preload: false
+  top_n_per_article: 1
+  unescape: true
+
+# Font Awesome 图标配置
+fontawesome: true
+
+# 动态彩带背景特效
+canvas_fluttering_ribbon:
+  enable: true
+  mobile: false  # false 手机端不显示，true 手机端也显示
+
+  
+# 点击出现爱心
+click_heart:
+  enable: true
+  mobile: false
+
+# 主页副标题（循环打字特效）
+subtitle:
+  enable: true
+  effect: true
+  startDelay: 300
+  typeSpeed: 200
+  backSpeed: 800
+  loop: true
+  source: false
+  sub:
+    - 我们天生都是冒险家
