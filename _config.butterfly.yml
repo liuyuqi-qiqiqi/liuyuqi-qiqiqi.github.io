@@ -47,6 +47,16 @@ click_heart:
   enable: true
   mobile: false
 
+# 侧边栏作者信息卡（Follow Me 按钮）
+aside:
+  card_author:
+    button:
+      link: https://github.com/liuyuqi-qiqiqi
+
+# 社交图标（显示在顶部横幅）
+social:
+  fab fa-github: https://github.com/liuyuqi-qiqiqi || GitHub
+
 # 主页副标题（循环打字特效）
 subtitle:
   enable: true
