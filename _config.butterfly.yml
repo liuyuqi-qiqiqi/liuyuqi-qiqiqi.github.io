@@ -26,7 +26,8 @@ runtimeshow:
 custom_css: /css/custom.css
 
 # 本地搜索功能
-search: true
+search:
+  use: local_search
 local_search:
   enable: true
   preload: false
@@ -35,6 +36,12 @@ local_search:
 
 # Font Awesome 图标配置
 fontawesome: true
+
+# 关闭不蒜子访问统计（国内加载不稳定）
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
 
 # 动态彩带背景特效
 canvas_fluttering_ribbon:
