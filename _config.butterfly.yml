@@ -64,6 +64,21 @@ aside:
 social:
   fab fa-github: https://github.com/liuyuqi-qiqiqi || GitHub
 
+# Giscus 评论系统
+comments:
+  use: Giscus
+  text: true
+  lazyload: false
+  count: true
+  card_post_count: true
+
+giscus:
+  repo: liuyuqi-qiqiqi/liuyuqi-qiqiqi.github.io
+  repo_id: R_kgDOSjHppg
+  category_id: DIC_kwDOSjHpps4C9lcD
+  light_theme: light
+  dark_theme: dark_dimmed
+
 # 主页副标题（循环打字特效）
 subtitle:
   enable: true
