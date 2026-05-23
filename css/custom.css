@@ -1,3 +1,4 @@
-.full-top-img {
-    background-position: center bottom !important;
+#page-header.full_page {
+    background-size: 100% auto !important;
+    background-position: center 20% !important;
 }
