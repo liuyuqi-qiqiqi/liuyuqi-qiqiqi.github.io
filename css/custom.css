@@ -1,3 +1,60 @@
+/* 顶部图居中优化 */
 .full-top-img {
     background-position: center center !important;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 文字渲染优化 */
+body {
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 图片优化 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 移动端优化 */
+@media screen and (max-width: 768px) {
+    #site-title {
+        font-size: 1.8rem;
+    }
+    .recent-post-item {
+        padding: 15px;
+    }
+    #page-header {
+        height: 280px !important;
+    }
+}
+
+/* 文章内容可读性 */
+.article-content,
+.post-content {
+    line-height: 1.8;
+}
+
+/* 链接过渡动画 */
+a {
+    transition: color 0.3s ease;
+}
+
+/* 打印样式 */
+@media print {
+    #sidebar,
+    #footer,
+    #rightside,
+    .canvas-ribbon {
+        display: none !important;
+    }
+    .page {
+        margin: 0;
+        padding: 0;
+    }
 }
