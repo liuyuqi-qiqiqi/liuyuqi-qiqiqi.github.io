@@ -65,6 +65,20 @@
 
   
   <url>
+    <loc>https://liuyuqi-qiqiqi.github.io/tags/%E8%AE%AD%E7%BB%83%E8%90%A5-InfiniTensor-C-Linux%E5%BC%80%E5%8F%91-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liuyuqi-qiqiqi.github.io/tags/%E8%AE%AD%E7%BB%83%E8%90%A5-InfiniTensor-WSL-Linux-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://liuyuqi-qiqiqi.github.io/tags/Hexo/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -85,31 +99,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://liuyuqi-qiqiqi.github.io/tags/%E8%AE%AD%E7%BB%83%E8%90%A5-InfiniTensor-WSL-Linux-C-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
-    <lastmod>2026-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://liuyuqi-qiqiqi.github.io/tags/%E8%AE%AD%E7%BB%83%E8%90%A5-InfiniTensor-C-Linux%E5%BC%80%E5%8F%91-%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2026-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://liuyuqi-qiqiqi.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://liuyuqi-qiqiqi.github.io/categories/2026%E5%A4%8F%E5%AD%A3InfiniTensor%E8%AE%AD%E7%BB%83%E8%90%A5/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://liuyuqi-qiqiqi.github.io/categories/2026%E5%A4%8F%E5%AD%A3InfiniTensor%E8%AE%AD%E7%BB%83%E8%90%A5/</loc>
+    <loc>https://liuyuqi-qiqiqi.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
