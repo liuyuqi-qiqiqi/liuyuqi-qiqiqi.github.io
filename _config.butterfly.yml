@@ -102,12 +102,6 @@ click_heart:
   enable: true
   mobile: false
 
-# 侧边栏作者信息卡（Follow Me 按钮）
-aside:
-  card_author:
-    button:
-      link: https://github.com/liuyuqi-qiqiqi
-
 # Giscus 评论系统
 comments:
   use: Giscus
