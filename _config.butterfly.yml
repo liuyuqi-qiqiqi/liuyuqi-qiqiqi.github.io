@@ -91,7 +91,6 @@ related_post:
 # 代码块
 highlight_theme: default
 code_word_wrap: false
->>>>>>> Stashed changes
 
 # 动态彩带背景特效
 canvas_fluttering_ribbon:
