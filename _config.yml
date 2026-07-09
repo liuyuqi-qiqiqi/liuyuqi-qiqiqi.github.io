@@ -6,14 +6,14 @@
 title: 在思域车上等待天亮
 subtitle: ''
 description: 'Будущее в самом разгаре'
-keywords:
+keywords: 俄语学习,计算机考研,408,冰壶,Hexo博客,编程,学习笔记
 author: liuyuqi
-language: CH
-timezone: ''
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://liuyuqi-qiqiqi.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -109,3 +109,19 @@ search:
   path: search.xml
   field: post
   format: html
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  rel: true
+  tags: true
+  categories: true
+
+# RSS Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: true
+  order_by: -date

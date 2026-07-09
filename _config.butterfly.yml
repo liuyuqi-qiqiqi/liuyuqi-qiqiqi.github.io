@@ -1,6 +1,6 @@
 nav:
   logo: /images/myphoto.jpg
-  display_title: true  # 关闭标题文字，只显示图片Logo
+  display_title: true
   fixed: false
 
 menu:
@@ -8,31 +8,41 @@ menu:
   时间轴: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
-  搜索: /search/ || fas fa-search
 
 # 头像设置
 avatar:
   img: /images/myphoto.jpg
 
 # 顶部图设置
-index_img: /images/longlong-photo.jpg
-default_top_img: /images/longlong-photo.jpg
-index_top_img_height: 400px # 顶部图高度，可自己调整，比如改成350px/450px
+index_img: /images/yuqiiqi.jpg
+default_top_img: /images/yuqiiqi.jpg
+index_top_img_height: 350px
 
 runtimeshow:
   enable: true
   publish_date: 20/5/2026 00:00:00
 
+favicon: /img/favicon.ico
+
 custom_css: /css/custom.css
+
+# 社交链接
+social:
+  github: https://github.com/liuyuqi-qiqiqi || fab fa-github
 
 # 本地搜索功能
 search:
   use: local_search
-local_search:
+  local_search:
+    enable: true
+    preload: false
+    top_n_per_article: 1
+    unescape: true
+
+# 页面加载进度条（顶部彩色滚动条）
+preloader:
   enable: true
-  preload: false
-  top_n_per_article: 1
-  unescape: true
+  source: 2  # 2 = pace 进度条, 1 = 全屏加载动画
 
 # Font Awesome 图标配置
 fontawesome: true
@@ -43,12 +53,51 @@ busuanzi:
   site_pv: false
   page_pv: false
 
+# 图片懒加载
+lazyload:
+  enable: true
+  field: post
+  placeholder: /img/loading.gif
+  blur: true
+
+# 文章锚点
+anchor:
+  enable: true
+
+# 文章版权
+copyright:
+  enable: true
+  limit_count: 50
+  languages:
+    author: 作者
+    link: 文章链接
+    source: 来源
+    copyright_notice: 版权声明
+
+# 文章元数据
+post_meta:
+  page:
+    date_type: created
+    categories: true
+    tags: true
+    label: true
+
+# 相关文章
+related_post:
+  enable: true
+  limit: 4
+  date_type: created
+
+# 代码块
+highlight_theme: default
+code_word_wrap: false
+>>>>>>> Stashed changes
+
 # 动态彩带背景特效
 canvas_fluttering_ribbon:
   enable: true
-  mobile: false  # false 手机端不显示，true 手机端也显示
+  mobile: false
 
-  
 # 点击出现爱心
 click_heart:
   enable: true
@@ -84,9 +133,35 @@ subtitle:
   enable: true
   effect: true
   startDelay: 300
-  typeSpeed: 200
-  backSpeed: 800
+  typeSpeed: 120
+  backSpeed: 600
   loop: true
   source: false
   sub:
     - 我们天生都是冒险家
+
+# 公告
+aside:
+  card_author:
+    button:
+      link: https://github.com/liuyuqi-qiqiqi
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的博客，记录学习与生活的点滴~
+
+# 右下角按钮
+rightside:
+  readmode: false
+  translate: false
+  darkmode: true
+  hide_aside: true
+  toc: true
+  scrollpercent: true
+
+# 页脚
+footer:
+  enable: true
+  powered:
+    enable: true
+  copyright:
+    enable: true
