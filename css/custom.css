@@ -45,6 +45,11 @@ a {
     transition: color 0.3s ease;
 }
 
+/* 目录展开：所有子目录始终可见 */
+#card-toc .toc-content .toc-child {
+    display: block !important;
+}
+
 /* 打印样式 */
 @media print {
     #sidebar,
