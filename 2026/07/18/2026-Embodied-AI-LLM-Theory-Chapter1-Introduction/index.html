@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>具身大模型理论｜第一章 绪论与整体概述 | 在思域车上等待天亮</title><meta name="author" content="liuyuqi"><meta name="copyright" content="liuyuqi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="具身智能微专业核心课程《具身大模型理论》第一章学习笔记，系统梳理具身智能发展背景、基本概念、研究意义、发展现状与整体研究框架。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="具身大模型理论｜第一章 绪论与整体概述">
+<meta property="og:url" content="https://liuyuqi-qiqiqi.github.io/2026/07/18/2026-Embodied-AI-LLM-Theory-Chapter1-Introduction/index.html">
+<meta property="og:site_name" content="在思域车上等待天亮">
+<meta property="og:description" content="具身智能微专业核心课程《具身大模型理论》第一章学习笔记，系统梳理具身智能发展背景、基本概念、研究意义、发展现状与整体研究框架。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://liuyuqi-qiqiqi.github.io/images/myphoto.jpg">
+<meta property="article:published_time" content="2026-07-18T11:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-18T08:37:32.258Z">
+<meta property="article:author" content="liuyuqi">
+<meta property="article:tag" content="具身智能微专业,具身大模型,人工智能理论,绪论">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liuyuqi-qiqiqi.github.io/images/myphoto.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "具身大模型理论｜第一章 绪论与整体概述",
+  "url": "https://liuyuqi-qiqiqi.github.io/2026/07/18/2026-Embodied-AI-LLM-Theory-Chapter1-Introduction/",
+  "image": "https://liuyuqi-qiqiqi.github.io/images/myphoto.jpg",
+  "datePublished": "2026-07-18T11:00:00.000Z",
+  "dateModified": "2026-07-18T08:37:32.258Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "liuyuqi",
+      "url": "https://liuyuqi-qiqiqi.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://liuyuqi-qiqiqi.github.io/2026/07/18/2026-Embodied-AI-LLM-Theory-Chapter1-Introduction/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '具身大模型理论｜第一章 绪论与整体概述',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="在思域车上等待天亮" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/myphoto.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/yuqiiqi.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/images/myphoto.jpg" alt="Logo"><span class="site-name">在思域车上等待天亮</span></a><a class="nav-page-title" href="/"><span class="site-name">具身大模型理论｜第一章 绪论与整体概述</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">具身大模型理论｜第一章 绪论与整体概述</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-07-18T11:00:00.000Z" title="发表于 2026-07-18 19:00:00">2026-07-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-07-18T08:37:32.258Z" title="更新于 2026-07-18 16:37:32">2026-07-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%85%B7%E8%BA%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%90%86%E8%AE%BA/">具身大模型理论</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本文为<strong>具身智能微专业</strong>配套核心课程《具身大模型理论》第一章「绪论与概述」的学习笔记，授课教师为航天学院控制科学与工程系高亚斌老师。本章作为课程总起，从宏观视角勾勒出具身智能与大规模语言模型两大核心脉络，系统梳理了<strong>具身智能的含义与发展</strong>、<strong>大规模语言模型的基本概念</strong>、<strong>发展历程</strong>以及<strong>构建流程</strong>四大知识板块，为后续深入展开具身大模型各专题奠定理论基础。</p>
+<p>本文所属的「具身大模型理论」栏目为独立课程专栏，与此前 InfiniTensor 训练营系列内容分属不同学习体系，栏目分类互不交叉。</p>
+<hr>
+<h2 id="一、具身智能含义与发展"><a href="#一、具身智能含义与发展" class="headerlink" title="一、具身智能含义与发展"></a>一、具身智能含义与发展</h2><h3 id="1-1-空间智能与具身智能：两条核心路径"><a href="#1-1-空间智能与具身智能：两条核心路径" class="headerlink" title="1.1 空间智能与具身智能：两条核心路径"></a>1.1 空间智能与具身智能：两条核心路径</h3><p>2024 年之后，人工智能的发展逐渐分化为两条核心路径：<strong>空间智能（AI Agent）</strong> 与<strong>具身智能（Embodied AI）</strong>，二者在实现方式、应用场景与技术架构上存在显著差异。</p>
+<p><strong>空间智能</strong>本质是运行在数字空间的软件系统，通过感知环境、决策规划、执行任务形成**「感知—决策—行动」闭环**。它依赖<strong>大语言模型</strong>、<strong>推理引擎</strong>、<strong>规划算法</strong>等技术，主要通过 API 调用、数据处理、文本生成等方式完成任务。典型应用包括智能客服、数据分析、内容生成等，部署周期短（约 2–4 周），成本低，适合数字化业务流程。</p>
+<p><strong>具身智能</strong>则强调智能依托<strong>物理载体</strong>（如机器人、无人机、智能汽车）与现实世界交互，通过<strong>多模态传感器</strong>（视觉、触觉、力觉等）感知环境，并在**「感知→决策→行动→再感知」<strong>的实时闭环中持续进化。其技术栈涵盖</strong>传感器融合**、<strong>空间推理</strong>、<strong>运动规划</strong>、<strong>精密控制</strong>等，应用于制造业自动化、服务机器人、灾难救援等物理操作场景，研发周期长（6–12 个月以上），硬件投入高。</p>
+<h3 id="1-2-具身智能的核心内涵"><a href="#1-2-具身智能的核心内涵" class="headerlink" title="1.2 具身智能的核心内涵"></a>1.2 具身智能的核心内涵</h3><p>具身智能的核心思想在于：<strong>智能不能脱离物理身体而存在，必须通过与真实环境的持续交互来习得与进化</strong>。其内涵可分解为三个关键环节：</p>
+<ul>
+<li><strong>具身感知</strong>：通过视觉、触觉、力觉等多模态传感器，实时获取物理环境的状态信息，构建对自身与外部世界的感知表征；</li>
+<li><strong>具身推理</strong>：基于感知信息进行空间理解、任务规划与行为决策，将高层任务目标分解为可执行的原子动作序列；</li>
+<li><strong>具身执行</strong>：将决策结果转化为物理世界的具体动作，通过精密运动控制完成操作任务，并根据执行反馈进行动态调整。</li>
+</ul>
+<h3 id="1-3-为什么需要具身智能"><a href="#1-3-为什么需要具身智能" class="headerlink" title="1.3 为什么需要具身智能"></a>1.3 为什么需要具身智能</h3><p>当前人工智能在感知、推理与决策层面已取得显著进展，但在面对真实物理世界时仍存在诸多瓶颈：传统 AI 系统缺乏与物理环境的<strong>直接交互能力</strong>，无法处理非结构化场景中的<strong>不确定性</strong>与<strong>实时性</strong>需求。机器人需要在动态变化的环境中理解空间关系、操纵未知物体、适应意外干扰——这些任务的共性是要求智能体具备<strong>物理交互闭环</strong>。因此，<strong>当前人工智能还不足以让机器人更智能，需要具身智能</strong>。</p>
+<h3 id="1-4-具身智能应用特点与发展前景"><a href="#1-4-具身智能应用特点与发展前景" class="headerlink" title="1.4 具身智能应用特点与发展前景"></a>1.4 具身智能应用特点与发展前景</h3><p>具身智能的研究成果正逐步从实验室走向实际应用场景，覆盖<strong>工业制造</strong>、<strong>家庭服务</strong>、<strong>医疗康复</strong>、<strong>物流仓储</strong>、<strong>灾难救援</strong>等多个领域。其应用呈现两大核心趋势：</p>
+<ul>
+<li><strong>高效性</strong>：利用大模型驱动的通用任务理解与规划能力，降低机器人系统的部署成本与适配周期；</li>
+<li><strong>轻量化</strong>：从大规模预训练模型中蒸馏出适配端侧部署的轻量策略网络，使智能体在有限算力条件下仍具备可靠的感知与决策能力。</li>
+</ul>
+<p>未来，具身智能的研究将围绕<strong>通用操作能力</strong>、<strong>多模态感知融合</strong>、<strong>Sim-to-Real 迁移</strong>、<strong>人机协作安全</strong>等方向持续深化。</p>
+<hr>
+<h2 id="二、大规模语言模型基本概念"><a href="#二、大规模语言模型基本概念" class="headerlink" title="二、大规模语言模型基本概念"></a>二、大规模语言模型基本概念</h2><h3 id="2-1-什么是大规模语言模型"><a href="#2-1-什么是大规模语言模型" class="headerlink" title="2.1 什么是大规模语言模型"></a>2.1 什么是大规模语言模型</h3><p><strong>大规模语言模型（Large Language Models, LLM）</strong>，也称大语言模型或大型语言模型，是一种由包含<strong>数百亿以上参数</strong>的深度神经网络构建的语言模型，通常使用<strong>自监督学习</strong>方法通过大量无标注文本进行训练。</p>
+<p>自 2018 年以来，Google、OpenAI、Meta、百度、华为等公司和研究机构相继发布了包括 <strong>BERT</strong>、<strong>GPT</strong> 等在内的多种模型，并在几乎所有自然语言处理任务中表现出色。2019 年大模型呈现爆发式增长，特别是 2022 年 11 月 <strong>ChatGPT（Chat Generative Pre-trained Transformer）</strong> 发布后，更是引起了全世界的广泛关注。用户可以使用自然语言与系统交互，实现包括<strong>问答、分类、摘要、翻译、聊天</strong>等从理解到生成的各种任务。大规模语言模型展现出了强大的<strong>对世界知识的掌握</strong>和<strong>对语言的理解能力</strong>。</p>
+<h3 id="2-2-语言模型的核心目标：建模自然语言的概率分布"><a href="#2-2-语言模型的核心目标：建模自然语言的概率分布" class="headerlink" title="2.2 语言模型的核心目标：建模自然语言的概率分布"></a>2.2 语言模型的核心目标：建模自然语言的概率分布</h3><p>语言是人类区别于其他动物的根本特征——<strong>逻辑思维以语言的形式表达，知识以文字的形式记录和传播</strong>。如果人工智能想要获取知识，就必须懂得理解人类使用的不太精确、可能有歧义、混乱的语言。</p>
+<p><strong>语言模型（Language Model, LM）</strong> 的目标是建模自然语言的概率分布。词汇表 $V$ 上的语言模型由函数 $P(w_1 w_2 \dots w_m)$ 表示，表示词序列 $w_1 w_2 \dots w_m$ 作为一个句子出现的可能性大小。对于任意词串 $w_1 w_2 \dots w_m \in V^+$，有 $P(w_1 w_2 \dots w_m) \geqslant 0$，且满足归一化条件。</p>
+<p>由于联合概率 $P(w_1 w_2 \dots w_m)$ 的参数量十分巨大，直接计算非常困难——若将 $w_1 w_2 \dots w_m$ 看作一个变量，它具有 $|V|^m$ 种可能。以《现代汉语词典（第七版）》包含 7 万词条、句子长度按 20 个词计算，模型参数量将达到 $7.9792 \times 10^{96}$ 的天文数字。</p>
+<h3 id="2-3-链式法则与模型简化"><a href="#2-3-链式法则与模型简化" class="headerlink" title="2.3 链式法则与模型简化"></a>2.3 链式法则与模型简化</h3><p>为减少 $P(w_1 w_2 \dots w_m)$ 的模型参数量，可利用句子序列从左至右的生成过程，使用<strong>链式法则</strong>进行分解：</p>
+<p>$$P(w_1 w_2 \dots w_m) &#x3D; P(w_1) \cdot P(w_2 \mid w_1) \cdot P(w_3 \mid w_1 w_2) \cdots P(w_m \mid w_1 w_2 \dots w_{m-1})$$</p>
+<p>由此，$w_1 w_2 \dots w_m$ 的生成过程可看作<strong>单词逐个生成</strong>的过程：首先生成 $w_1$，之后根据 $w_1$ 生成 $w_2$，再根据 $w_1$ 和 $w_2$ 生成 $w_3$，以此类推。</p>
+<p>仅通过上述过程，模型参数量依然没有下降——$P(w_m \mid w_1 w_2 \dots w_{m-1})$ 的参数量依然是天文数字。基于上述转换，可进一步对模型进行简化，由此引出了两类重要方法：<strong>n 元语言模型</strong>与<strong>基于分布式表示和神经网络的语言模型</strong>。</p>
+<h3 id="2-4-n-元语言模型"><a href="#2-4-n-元语言模型" class="headerlink" title="2.4 n 元语言模型"></a>2.4 n 元语言模型</h3><p>对于句子 $S &#x3D; w_1 w_2 \dots w_n$，词 $w_i$ 出现的概率受其前面 $i-1$ 个词 $w_1 w_2 \dots w_{i-1}$ 影响，我们将这 $i-1$ 个词称为词 $w_i$ 的<strong>历史</strong>。随着历史单词数量增多，绝大多数的历史并不会在训练数据中出现，这意味着 $P(w_i \mid w_1 w_2 \dots w_{i-1})$ 很可能为 0，使概率估计失去意义。</p>
+<p>为解决该问题，可进一步假设任意单词 $w_i$ 出现的概率<strong>只与过去 $n-1$ 个词相关</strong>——满足该条件的模型称为 <strong>n 元语法或 n 元文法（n-gram）模型</strong>，其中 n-gram 表示 $n$ 个连续单词构成的单元。</p>
+<p>尽管 n 元语言模型能缓解句子概率为 0 的问题，但语言具备无穷的可能性，再庞大的训练语料也无法覆盖所有 n-gram，而训练语料中的<strong>零频率并不代表零概率</strong>。因此，需要使用<strong>平滑技术（Smoothing）</strong>——即为产生更合理的概率而对最大似然估计进行调整的一类方法，基本思想是<strong>提高低概率、降低高概率</strong>，使整体概率分布趋于均匀。</p>
+<p>然而，n 元语言模型存在三个较为明显的缺点：</p>
+<ol>
+<li><strong>无法建模长度超过 $n$ 的上下文</strong>；</li>
+<li><strong>依赖人工设计规则的平滑技术</strong>；</li>
+<li>当 $n$ 增大时，<strong>数据稀疏性随之增大</strong>，模型参数量呈指数级增加，参数难以被准确学习。</li>
+</ol>
+<p>此外，n 元文法中单词的<strong>离散表示</strong>也忽略了单词之间的相似性。</p>
+<h3 id="2-5-神经语言模型"><a href="#2-5-神经语言模型" class="headerlink" title="2.5 神经语言模型"></a>2.5 神经语言模型</h3><p>Bengio 等人在 2000 年提出了使用<strong>前馈神经网络</strong>对 $P(w_i \mid w_1 w_2 \dots w_{i-1})$ 进行估计的语言模型。其核心创新在于：词的<strong>独热编码（One-Hot Encoding）<strong>被映射为一个低维稠密的实数向量，称为</strong>词向量（Word Embedding）</strong>。</p>
+<p>此后，<strong>循环神经网络（RNN）</strong>、<strong>卷积神经网络（CNN）</strong>、<strong>端到端记忆网络</strong>等方法都成功应用于语言模型建模。以循环神经网络语言模型为例，其由<strong>输入层、隐藏层和输出层</strong>三部分组成，通过隐藏状态的循环传递实现对历史信息的持续编码。</p>
+<p>相较于 n 元语言模型，神经网络方法可以在一定程度上<strong>避免数据稀疏问题</strong>，部分模型还可以<strong>突破对历史长度的限制</strong>，从而更好地建模长距离依赖关系。这类方法统称为<strong>神经语言模型（Neural Language Models, NLM）</strong>。</p>
+<h3 id="2-6-自监督学习范式与预训练语言模型"><a href="#2-6-自监督学习范式与预训练语言模型" class="headerlink" title="2.6 自监督学习范式与预训练语言模型"></a>2.6 自监督学习范式与预训练语言模型</h3><p>深度神经网络训练通常需要采用有监督方法，使用标注数据进行训练。然而，语言模型的训练目标可以通过<strong>无标注文本直接获得</strong>——给定前文预测下一个词，训练信号天然存在于文本序列之中。因此，语言模型成为了典型的**自监督学习（Self-Supervised Learning）**任务。互联网的发展使大规模文本极容易获取，为训练超大规模基于神经网络的语言模型提供了数据基础。</p>
+<p>以 <strong>ELMo</strong> 为代表的动态词向量模型开启了语言模型预训练的大门。此后，以 <strong>GPT</strong> 和 <strong>BERT</strong> 为代表的基于 <strong>Transformer 架构</strong>的大规模预训练语言模型的出现，使自然语言处理全面进入<strong>预训练微调范式</strong>新时代。这类方法统称为<strong>预训练语言模型（Pre-trained Language Models, PLM）</strong>。</p>
+<p>2020 年，OpenAI 发布了由包含 <strong>1750 亿参数</strong>的神经网络构成的生成式大规模预训练语言模型 <strong>GPT-3</strong>，开启了大语言模型的新时代。由于针对不同任务进行微调需要消耗大量计算资源，预训练微调范式不再适用于大语言模型。通过<strong>语境学习（In-Context Learning, ICL）<strong>等方法，直接使用大语言模型即可在诸多任务的</strong>少样本场景</strong>下取得优异效果。此后，研究人员进一步提出了<strong>提示词（Prompt）学习</strong>、<strong>模型即服务（Model as a Service, MaaS）</strong>、**指令微调（Instruction Tuning）**等方法。</p>
+<h3 id="2-7-缩放法则"><a href="#2-7-缩放法则" class="headerlink" title="2.7 缩放法则"></a>2.7 缩放法则</h3><p>Kaplan 等人提出了<strong>缩放法则（Scaling Laws）</strong>，指出模型的性能依赖于模型的规模，具体包括<strong>参数数量</strong>、<strong>数据集大小</strong>和<strong>计算量</strong>三个维度，模型的效果会随着三者的指数增加而线性提高。这一发现为大语言模型的持续 scaling 提供了理论依据。</p>
+<hr>
+<h2 id="三、大规模语言模型发展历程"><a href="#三、大规模语言模型发展历程" class="headerlink" title="三、大规模语言模型发展历程"></a>三、大规模语言模型发展历程</h2><p>大语言模型的发展历程虽然只有短短不到五年，但发展速度相当惊人——截至 2023 年 6 月，国内外已有超过百种大模型相继发布。其发展可粗略划分为三个阶段：</p>
+<h3 id="3-1-基础模型阶段（2018–2021-年）"><a href="#3-1-基础模型阶段（2018–2021-年）" class="headerlink" title="3.1 基础模型阶段（2018–2021 年）"></a>3.1 基础模型阶段（2018–2021 年）</h3><p>此阶段的研究主要集中于语言模型本身，对各类型模型结构均有涉及：</p>
+<ul>
+<li><strong>2017 年</strong>：Vaswani 等人提出 <strong>Transformer 架构</strong>，在机器翻译任务上取得突破性进展；</li>
+<li><strong>2018 年</strong>：Google 和 OpenAI 分别提出 <strong>BERT</strong> 和 <strong>GPT-1</strong> 模型，开启预训练语言模型时代；</li>
+<li><strong>2019 年</strong>：OpenAI 发布 <strong>GPT-2</strong>（参数量 15 亿）；Google 发布参数规模为 <strong>110 亿的 T5</strong> 模型；</li>
+<li><strong>2020 年</strong>：OpenAI 将语言模型参数规模扩展至 <strong>1750 亿</strong>，发布 <strong>GPT-3</strong>。</li>
+</ul>
+<p>此阶段对<strong>仅编码器（Encoder Only）</strong>、<strong>编码器-解码器（Encoder-Decoder）</strong>、<strong>仅解码器（Decoder Only）<strong>等各种模型结构均有相应研究。模型大小与 BERT 类似的算法通常采用</strong>预训练微调范式</strong>，针对不同下游任务进行微调。但模型参数量在 10 亿以上时，由于微调的计算量极高，这类模型在当时的影响力相较 BERT 类模型有显著差距。</p>
+<h3 id="3-2-能力探索阶段（2019–2022-年）"><a href="#3-2-能力探索阶段（2019–2022-年）" class="headerlink" title="3.2 能力探索阶段（2019–2022 年）"></a>3.2 能力探索阶段（2019–2022 年）</h3><p>由于大语言模型很难针对特定任务进行微调，研究人员开始探索如何在不针对单一任务进行微调的前提下充分发挥大语言模型的能力：</p>
+<ul>
+<li><strong>2019 年</strong>：Radford 等人使用 GPT-2 模型研究了大语言模型在<strong>零样本</strong>情况下的任务处理能力；</li>
+<li><strong>Brown 等人</strong>在 GPT-3 模型上研究了通过**语境学习（ICL）**进行少样本学习的方法；</li>
+<li><strong>指令微调</strong>将大量各类型任务统一为生成式自然语言理解框架，并构造训练语料进行微调；</li>
+<li><strong>2022 年</strong>：Ouyang 等人提出了使用**「有监督微调 + 强化学习」**的 <strong>InstructGPT</strong> 算法。</li>
+</ul>
+<p>这些方法在直接利用大语言模型进行零样本和少样本学习的基础上，逐步扩展到利用生成式框架针对大量任务进行有监督微调的方法，有效提升了模型性能。</p>
+<h3 id="3-3-突破发展阶段（2022-年-11-月至今）"><a href="#3-3-突破发展阶段（2022-年-11-月至今）" class="headerlink" title="3.3 突破发展阶段（2022 年 11 月至今）"></a>3.3 突破发展阶段（2022 年 11 月至今）</h3><p>以 2022 年 11 月 <strong>ChatGPT</strong> 的发布为起点，大语言模型进入突破发展阶段：</p>
+<ul>
+<li><strong>ChatGPT</strong> 通过一个简单的对话框，利用一个大语言模型即可实现<strong>问题回答、文稿撰写、代码生成、数学解题</strong>等过去自然语言处理系统需要大量定制开发才能分别实现的能力；</li>
+<li><strong>2023 年 3 月</strong>：<strong>GPT-4</strong> 发布，相较于 ChatGPT 又有非常明显的进步，并具备了<strong>多模态理解能力</strong>，在多种基准考试测试上的得分高于 88% 的应试者；</li>
+<li>此后，各大公司和研究机构相继发布同类系统，包括 Google 推出的 <strong>Bard</strong>、百度的<strong>文心一言</strong>、科大讯飞的<strong>星火大模型</strong>、智谱 <strong>ChatGLM</strong>、复旦大学 <strong>MOSS</strong> 等。</li>
+</ul>
+<hr>
+<h2 id="四、大规模语言模型构建流程"><a href="#四、大规模语言模型构建流程" class="headerlink" title="四、大规模语言模型构建流程"></a>四、大规模语言模型构建流程</h2><p>大语言模型的构建流程可划分为四个核心阶段：<strong>预训练（Pretraining）</strong>、<strong>有监督微调（Supervised Fine-Tuning）</strong>、<strong>奖励建模（Reward Modeling）<strong>与</strong>强化学习（Reinforcement Learning）</strong>。各阶段在数据规模、资源需求与训练目标上呈递进关系，共同构成从原始语料到可用对话系统的完整技术链路。</p>
+<h3 id="4-1-预训练阶段"><a href="#4-1-预训练阶段" class="headerlink" title="4.1 预训练阶段"></a>4.1 预训练阶段</h3><p><strong>预训练</strong>阶段需要利用海量训练数据，数据来源涵盖互联网网页、维基百科、书籍、GitHub、论文、问答网站等，构建包含<strong>数千亿甚至数万亿单词</strong>的多样性内容。利用由<strong>数千块高性能 GPU</strong> 和高速网络组成的超级计算机，花费数十天完成深度神经网络参数训练，构建<strong>基础语言模型（Base Model）</strong>。</p>
+<p>在预训练语料集方面，以 GPT-3 为例，其主要包含经过过滤的 <strong>Common Crawl</strong> 数据集、<strong>WebText2</strong>、<strong>Books1</strong>、<strong>Books2</strong> 以及英文 <strong>Wikipedia</strong> 等数据集合。其中 Common Crawl 的原始数据有 <strong>45 TB</strong>，经过滤后仅保留 <strong>570 GB</strong> 的数据。通过子词方式对语料进行切分，大约共包含 <strong>5000 亿子词</strong>。为保证模型使用更多高质量数据，GPT-3 训练时根据语料来源的不同设置了不同的采样权重——在完成 3000 亿子词训练时，英文 Wikipedia 的语料平均训练轮数为 <strong>3.4 次</strong>，而 Common Crawl 和 Books2 仅有 <strong>0.44 次</strong>和 <strong>0.43 次</strong>。</p>
+<p>在分布式训练方面，由于模型参数量和训练数据量均极为庞大，单机无法完成训练过程：</p>
+<ul>
+<li><strong>OPT</strong>：使用 <strong>992 块 NVIDIA A100 80G GPU</strong>，采用全分片数据并行（Fully Shared Data Parallel）及 Megatron-LM 张量并行（Tensor Parallelism），整体训练时间将近 <strong>2 个月</strong>；</li>
+<li><strong>BLOOM</strong>：训练共花费 <strong>3.5 个月</strong>，使用 <strong>48 个计算节点</strong>，每个节点包含 <strong>8 块 NVIDIA A100 80G GPU</strong>（总计 384 GPU），节点内部使用 <strong>4 NVLink</strong> 用于 GPU 间通信，节点之间采用四个 Omni-Path 100 Gbps 网卡构建增强 8 维超立方体全局拓扑网络通信。BLOOM 使用 <strong>Megatron-DeepSpeed</strong> 框架进行训练，其中 Megatron-LM 提供张量并行能力和数据加载原语，DeepSpeed 提供 ZeRO 优化器、模型流水线以及常规分布式训练组件，通过该架构可实现<strong>数据、张量和流水线三维并行</strong>。</li>
+</ul>
+<h3 id="4-2-有监督微调阶段"><a href="#4-2-有监督微调阶段" class="headerlink" title="4.2 有监督微调阶段"></a>4.2 有监督微调阶段</h3><p><strong>有监督微调（Supervised Fine-Tuning, SFT）</strong>，也称为<strong>指令微调</strong>，利用少量高质量数据集合，包含用户输入的提示词和对应的理想输出结果。用户输入涵盖<strong>问题、闲聊对话、任务指令</strong>等多种形式和任务。</p>
+<p>利用这些有监督数据，使用与预训练阶段相同的语言模型训练算法，在基础语言模型的基础上进行训练，得到 <strong>SFT 模型</strong>。经过训练的 SFT 模型具备：</p>
+<ul>
+<li><strong>初步的指令理解能力和上下文理解能力</strong>；</li>
+<li>能够完成<strong>开放领域问答、阅读理解、翻译、代码生成</strong>等任务；</li>
+<li>具备一定的<strong>对未知任务的泛化能力</strong>。</li>
+</ul>
+<p>很多类 ChatGPT 的开源模型均属于该类型，包括 <strong>Alpaca</strong>、<strong>Vicuna</strong>、<strong>MOSS</strong>、<strong>ChatGLM-6B</strong> 等，部分模型在评测中达到了 ChatGPT 约 90% 的效果。该阶段所需计算资源相较预训练大幅降低，通常仅需 <strong>1–100 块 GPU</strong>，<strong>天级别</strong>即可完成训练。</p>
+<h3 id="4-3-奖励建模阶段"><a href="#4-3-奖励建模阶段" class="headerlink" title="4.3 奖励建模阶段"></a>4.3 奖励建模阶段</h3><p>**奖励建模（Reward Modeling）**阶段的目标是构建一个文本质量对比模型，对于同一个提示词，对 SFT 模型给出的多个不同输出结果的质量进行排序。**奖励模型（RM 模型）**可通过二分类模型，对输入的两个结果之间的优劣进行判断。</p>
+<p>RM 模型与基础语言模型和 SFT 模型不同，其本身并不能单独提供给用户使用。奖励模型的训练通常与 SFT 模型相似，使用<strong>数十块 GPU</strong>，通过<strong>几天时间</strong>完成训练。由于 RM 模型的准确率对强化学习阶段的效果有<strong>至关重要的影响</strong>，因此通常需要百万级别的<strong>标注对比对</strong>对该模型进行训练。</p>
+<h3 id="4-4-强化学习阶段"><a href="#4-4-强化学习阶段" class="headerlink" title="4.4 强化学习阶段"></a>4.4 强化学习阶段</h3><p><strong>强化学习（Reinforcement Learning）<strong>阶段根据数十万用户给出的提示词，利用前一阶段训练的 RM 模型，给出 SFT 模型对用户提示词补全结果的质量评估，并与语言模型建模目标综合得到更好的效果。通过在 SFT 模型基础上调整参数，使得最终生成的文本可以获得更高的</strong>奖励（Reward）</strong>。</p>
+<p>该阶段所需的计算量相较预训练同样少很多，通常仅需<strong>数十块 GPU</strong>、<strong>数天</strong>即可完成训练。经过强化学习方法训练后的 <strong>RL 模型</strong>，即为最终提供给用户使用、具有理解用户指令和上下文能力的类 ChatGPT 系统。</p>
+<p>值得注意的是，Andrej Karpathy 指出，强化学习并非毫无代价——<strong>它会使基础模型的熵降低，从而减少模型输出的多样性</strong>。此外，由于强化学习方法<strong>稳定性不高</strong>且<strong>超参数众多</strong>，模型收敛难度大，叠加 RM 模型的准确率问题，使得在大语言模型上有效应用强化学习具有相当的挑战。</p>
+<hr>
+<h2 id="本章总结"><a href="#本章总结" class="headerlink" title="本章总结"></a>本章总结</h2><p>本章作为《具身大模型理论》课程的绪论，从宏观视角完成了以下核心知识点的梳理：</p>
+<ol>
+<li><strong>具身智能</strong>：明确了空间智能与具身智能两条核心路径的差异与联系，阐述了具身智能的核心内涵（具身感知、具身推理、具身执行）及其研究意义与应用前景；</li>
+<li><strong>大规模语言模型基本概念</strong>：从语言模型的概率建模本质出发，系统梳理了从 n 元语言模型到神经语言模型，再到预训练语言模型的发展脉络，介绍了链式法则、平滑技术、词向量、自监督学习、缩放法则等关键概念；</li>
+<li><strong>大语言模型发展历程</strong>：回顾了从基础模型阶段到能力探索阶段，再到以 ChatGPT 为代表的突破发展阶段的演进轨迹；</li>
+<li><strong>大语言模型构建流程</strong>：详细拆解了预训练→有监督微调→奖励建模→强化学习四阶段构建范式，涵盖数据工程、分布式训练架构、各阶段资源需求与关键技术要点。</li>
+</ol>
+<p>下一章将在此基础上，深入展开 <strong>Transformer 架构</strong>的核心原理与具体实现细节，敬请期待。</p>
+<hr>
+<p>个人技术博客地址：<a href="https://liuyuqi-qiqiqi.github.io/">https://liuyuqi-qiqiqi.github.io</a></p>
+<p>GitHub博客源码仓库地址：<a target="_blank" rel="noopener" href="https://github.com/liuyuqi-qiqiqi/liuyuqi-qiqiqi.github.io">https://github.com/liuyuqi-qiqiqi/liuyuqi-qiqiqi.github.io</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://liuyuqi-qiqiqi.github.io">liuyuqi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://liuyuqi-qiqiqi.github.io/2026/07/18/2026-Embodied-AI-LLM-Theory-Chapter1-Introduction/">https://liuyuqi-qiqiqi.github.io/2026/07/18/2026-Embodied-AI-LLM-Theory-Chapter1-Introduction/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://liuyuqi-qiqiqi.github.io" target="_blank">在思域车上等待天亮</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E5%BE%AE%E4%B8%93%E4%B8%9A-%E5%85%B7%E8%BA%AB%E5%A4%A7%E6%A8%A1%E5%9E%8B-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%90%86%E8%AE%BA-%E7%BB%AA%E8%AE%BA/">具身智能微专业,具身大模型,人工智能理论,绪论</a></div><div class="post-share"><div class="social-share" data-image="/images/myphoto.jpg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/07/17/2026-InfiniTensor-training-camp-LLM-principles-structure/" title="2026年夏季InfiniTensor训练营｜大模型原理与结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">2026年夏季InfiniTensor训练营｜大模型原理与结构</div></div><div class="info-2"><div class="info-item-1">本文为 2026 年夏季 InfiniTensor 训练营推理引擎方向第二课《大模型原理与结构》的学习笔记。上一节课《AI 模型导论与推理基础原理》已完成人工智能底层基础概念的梳理，搭建了从感知器、深度神经网络到训练原理的 AI 基础认知框架。从本节课开始，正式进入大模型推理系统的核心领域：作为系列课程的第二讲，本节将深入拆解大模型的基石——Transformer 架构。  一、为什么需要 Transformer1.1 传统神经网络的局限 Vector to Vector：输入输出维度固定，不便于直接处理变长序列（如手写数字识别这类固定维度任务）； 独立计算缺陷：矩阵乘法中各输入向量相互独立，无法感知”道可道”中不同位置”道”字的语义差异。  1.2 Sequence to Sequence 任务特性 变长映射：输入和输出均可为变长序列，且二者长度不必相等（如翻译、文本生成、语音识别）； 上下文依赖：词义随位置变化，需要捕捉全局信息。  1.3 早期解决方案及其瓶颈 滑动窗口：仅能捕获局部固定范围的上下文； 循环神经网络（RNN）： 优点：理论上支持无限长上下文（依靠记忆模块 H...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/myphoto.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">liuyuqi</div><div class="author-info-description">Будущее в самом разгаре</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/liuyuqi-qiqiqi"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/liuyuqi-qiqiqi" target="_blank" title="fab fa-github"><i class="github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，记录学习与生活的点滴~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E5%90%AB%E4%B9%89%E4%B8%8E%E5%8F%91%E5%B1%95"><span class="toc-number">1.</span> <span class="toc-text">一、具身智能含义与发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%A9%BA%E9%97%B4%E6%99%BA%E8%83%BD%E4%B8%8E%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%EF%BC%9A%E4%B8%A4%E6%9D%A1%E6%A0%B8%E5%BF%83%E8%B7%AF%E5%BE%84"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 空间智能与具身智能：两条核心路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E7%9A%84%E6%A0%B8%E5%BF%83%E5%86%85%E6%B6%B5"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 具身智能的核心内涵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 为什么需要具身智能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD%E5%BA%94%E7%94%A8%E7%89%B9%E7%82%B9%E4%B8%8E%E5%8F%91%E5%B1%95%E5%89%8D%E6%99%AF"><span class="toc-number">1.4.</span> <span class="toc-text">1.4 具身智能应用特点与发展前景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">二、大规模语言模型基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 什么是大规模语言模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%A0%B8%E5%BF%83%E7%9B%AE%E6%A0%87%EF%BC%9A%E5%BB%BA%E6%A8%A1%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 语言模型的核心目标：建模自然语言的概率分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E9%93%BE%E5%BC%8F%E6%B3%95%E5%88%99%E4%B8%8E%E6%A8%A1%E5%9E%8B%E7%AE%80%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 链式法则与模型简化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-n-%E5%85%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 n 元语言模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E7%A5%9E%E7%BB%8F%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 神经语言模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-%E8%87%AA%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E8%8C%83%E5%BC%8F%E4%B8%8E%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.6.</span> <span class="toc-text">2.6 自监督学习范式与预训练语言模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-%E7%BC%A9%E6%94%BE%E6%B3%95%E5%88%99"><span class="toc-number">2.7.</span> <span class="toc-text">2.7 缩放法则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">三、大规模语言模型发展历程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9E%8B%E9%98%B6%E6%AE%B5%EF%BC%882018%E2%80%932021-%E5%B9%B4%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 基础模型阶段（2018–2021 年）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E8%83%BD%E5%8A%9B%E6%8E%A2%E7%B4%A2%E9%98%B6%E6%AE%B5%EF%BC%882019%E2%80%932022-%E5%B9%B4%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 能力探索阶段（2019–2022 年）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E7%AA%81%E7%A0%B4%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5%EF%BC%882022-%E5%B9%B4-11-%E6%9C%88%E8%87%B3%E4%BB%8A%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 突破发展阶段（2022 年 11 月至今）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%A4%A7%E8%A7%84%E6%A8%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">四、大规模语言模型构建流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E9%A2%84%E8%AE%AD%E7%BB%83%E9%98%B6%E6%AE%B5"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 预训练阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%9C%89%E7%9B%91%E7%9D%A3%E5%BE%AE%E8%B0%83%E9%98%B6%E6%AE%B5"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 有监督微调阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%A5%96%E5%8A%B1%E5%BB%BA%E6%A8%A1%E9%98%B6%E6%AE%B5"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 奖励建模阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E9%98%B6%E6%AE%B5"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 强化学习阶段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E7%AB%A0%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">本章总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/18/2026-Embodied-AI-LLM-Theory-Chapter1-Introduction/" title="具身大模型理论｜第一章 绪论与整体概述">具身大模型理论｜第一章 绪论与整体概述</a><time datetime="2026-07-18T11:00:00.000Z" title="发表于 2026-07-18 19:00:00">2026-07-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/2026-InfiniTensor-training-camp-LLM-principles-structure/" title="2026年夏季InfiniTensor训练营｜大模型原理与结构">2026年夏季InfiniTensor训练营｜大模型原理与结构</a><time datetime="2026-07-17T10:00:00.000Z" title="发表于 2026-07-17 18:00:00">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/17/2026-InfiniTensor-training-camp-AI-model-intro-inference-basics/" title="2026年夏季InfiniTensor训练营｜AI模型导论与推理基础原理">2026年夏季InfiniTensor训练营｜AI模型导论与推理基础原理</a><time datetime="2026-07-17T09:30:00.000Z" title="发表于 2026-07-17 17:30:00">2026-07-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/12/2026-InfiniTensor-training-camp-Vector-expansion-RuleOfFive-STL/" title="2026年夏季InfiniTensor训练营｜Vector扩容实现、C++三大/五大法则、继承多态与现代C++特性">2026年夏季InfiniTensor训练营｜Vector扩容实现、C++三大/五大法则、继承多态与现代C++特性</a><time datetime="2026-07-12T08:00:00.000Z" title="发表于 2026-07-12 16:00:00">2026-07-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/10/2026-InfiniTensor-training-camp-Vector-OOP-templates/" title="2026年夏季InfiniTensor训练营｜动态数组Vector实现、C++面向对象与模板类进阶">2026年夏季InfiniTensor训练营｜动态数组Vector实现、C++面向对象与模板类进阶</a><time datetime="2026-07-10T07:00:00.000Z" title="发表于 2026-07-10 15:00:00">2026-07-10</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By liuyuqi</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark_dimmed' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'liuyuqi-qiqiqi/liuyuqi-qiqiqi.github.io',
+      'data-repo-id': 'R_kgDOSjHppg',
+      'data-category-id': 'DIC_kwDOSjHpps4C9lcD',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/click-heart.min.js" async="async" mobile="false"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div></body></html>
